@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" th:href="|https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css|"/>
+  <link rel="stylesheet" href="../public/css/styles.css" th:href="@{/css/styles.css}" />
+  <link rel="icon" href="../public/img/favicon.ico" th:href="@{/img/favicon.ico}" />
+  <title>Amazon DynamoDB Item Tracker</title>
+</head>
+<body>
+<header th:replace="layout :: site-header"/>
+<div class="container">
+  <h3>Welcome <span sec:authentication="principal.username">User</span> to AWS Time Clock</h3>
+  <p>Now is: <b th:text="${execInfo.now.time}"></b></p>
+  <h2>Simple Time Clock</h2>
+  <p>The Amazon DynamoDB Time Clock application uses multiple AWS Services and the Java V2 API. Collecting and  working with items has never been easier! Simply perform these steps:<p>
+  <div>
+</body>
+</html>
