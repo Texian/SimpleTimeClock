@@ -73,7 +73,7 @@ public class WriteExcel{
 
         addCaption(sheet, 0, 0, "Writer");
         addCaption(sheet, 1, 0, "Date");
-        addCaption(sheet, 2, 0, "Guide");
+        addCaption(sheet, 2, 0, "Hours");
         addCaption(sheet, 3, 0, "Description");
         addCaption(sheet, 4, 0, "Status");
     }
@@ -85,13 +85,13 @@ public class WriteExcel{
 
             String name = te.getName();
             String date = te.getDate();
-            String guide = te.getHours();
+            String hours = te.getHours();
             String description = te.getDescription();
             String status = te.getStatus();
 
             addLabel(sheet, 0, i+2, name);
             addLabel(sheet, 1, i+2, date);
-            addLabel(sheet, 2, i+2, guide);
+            addLabel(sheet, 2, i+2, hours);
             addLabel(sheet, 3, i+2, description);
             addLabel(sheet, 4, i+2, status);
             i++;
