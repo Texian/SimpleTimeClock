@@ -57,14 +57,14 @@ public class MainController{
     String addItems(HttpServletRequest req, HttpServletResponse res) {
         // Get the user
         String name = getLoggedInUser();
-        String guide = req.getParameter("guide");
+        String hours = req.getParameter("hours");
         String description = req.getParameter("description");
         String status = req.getParameter("status");
 
         // Create objects, pass to injectNewSubmission()
         TimeEntry myTime = new TimeEntry();
         myTime.setName(name);
-        myTime.setGuide(guide);
+        myTime.setHours(hours);
         myTime.setDescription(description);
         myTime.setStatus(status);
 
@@ -98,6 +98,16 @@ public class MainController{
         return id;
     }
 
+    // Modifies entry values
+    @RequestMapping(value="/change", method= RequestMethod.POST)
+    @ResponseBody
+    String changeTime(HttpServletRequest req, HttpServletResponse res) {
+        String id = req.getParameter("id");
+        String status = req.getParameter("status");
+        dbService.updateItem(id, status);
+        return id;
+    }
+
     // Get sheet
     @RequestMapping(value="/retrieve", method= RequestMethod.POST)
     @ResponseBody
@@ -118,11 +128,13 @@ public class MainController{
     @ResponseBody
     String modifyTime(HttpServletRequest req, HttpServletResponse res) {
         String id = req.getParameter("id");
-        return dbService.getItem(id);
+        String xmlRes = dbService.getItem(id);
+        return xmlRes;
     }
 
     private String getLoggedInUser() {
         org.springframework.security.core.userdetails.User user2 = (org.springframework.security.core.userdetails.User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return user2.getUsername();
+        String name = user2.getUsername();
+        return name;
     }
 }

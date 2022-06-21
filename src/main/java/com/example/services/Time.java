@@ -8,7 +8,7 @@ public class Time {
     private String id;
     private String date;
     private String description;
-    private String guide;
+    private String hours;
     private String username;
     private String status;
     private String archive;
@@ -50,11 +50,11 @@ public class Time {
         this.username = username;
     }
 
-    public String getGuide() {
-        return this.guide;
+    public String getHours() {
+        return this.hours;
     }
-    public void setGuide(String guide) {
-        this.guide = guide;
+    public void setHours(String hours) {
+        this.hours = hours;
     }
 
     public String getDate() {
@@ -70,4 +70,5 @@ public class Time {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

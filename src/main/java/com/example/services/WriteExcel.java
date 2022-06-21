@@ -85,7 +85,7 @@ public class WriteExcel{
 
             String name = te.getName();
             String date = te.getDate();
-            String guide = te.getGuide();
+            String guide = te.getHours();
             String description = te.getDescription();
             String status = te.getStatus();
 

@@ -3,7 +3,7 @@ package com.example.entities;
 public class TimeEntry {
     private String id;
     private String name;
-    private String guide;
+    private String hours;
     private String date;
     private String description;
     private String status;
@@ -24,20 +24,18 @@ public class TimeEntry {
         return this.name;
     }
 
-    public void setGuide(String guide) {
-        this.guide = guide;
-    }
-
-    public String getGuide() {
-        return this.guide;
-    }
-
     public void setDate(String date) {
         this.date = date;
     }
 
-    public String getDate() {
-        return this.date;
+    public String getDate() { return this.date; }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getStatus() {
+        return this.status;
     }
 
     public void setDescription(String description) {
@@ -48,11 +46,11 @@ public class TimeEntry {
         return this.description;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setHours(String hours) {
+        this.hours = hours;
     }
 
-    public String getStatus() {
-        return this.status;
+    public String getHours() {
+        return this.hours;
     }
 }

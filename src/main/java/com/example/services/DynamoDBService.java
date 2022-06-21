@@ -94,7 +94,7 @@ public class DynamoDBService{
                 timeEntry.setDescription(time.getDescription());
                 timeEntry.setStatus(time.getStatus());
                 timeEntry.setName(time.getName());
-                timeEntry.setGuide(time.getGuide());
+                timeEntry.setHours(time.getHours());
                 timeEntry.setDate(time.getDate());
 
                 itemList.add(timeEntry);
@@ -213,7 +213,7 @@ public class DynamoDBService{
             timeEntry.setDescription(time.getDescription());
             timeEntry.setStatus(time.getStatus());
             timeEntry.setName(time.getName());
-            timeEntry.setGuide(time.getGuide());
+            timeEntry.setHours(time.getHours());
             timeEntry.setDate(time.getDate());
 
             itemList.add(timeEntry);
@@ -255,7 +255,7 @@ public class DynamoDBService{
                 timeEntry.setDescription(time.getDescription());
                 timeEntry.setStatus(time.getStatus());
                 timeEntry.setName(time.getName());
-                timeEntry.setGuide(time.getGuide());
+                timeEntry.setHours(time.getHours());
                 timeEntry.setDate(time.getDate());
 
                 itemList.add(timeEntry);
@@ -290,7 +290,7 @@ public class DynamoDBService{
             record.setDescription(item.getDescription());
             record.setStatus(item.getStatus());
             record.setName(item.getName());
-            record.setGuide(item.getGuide());
+            record.setHours(item.getHours());
             record.setDate(now());
             record.setArchive("Open");
 
@@ -333,9 +333,9 @@ public class DynamoDBService{
                 name.appendChild(doc.createTextNode(items.getName()));
                 item.appendChild(name);
 
-                Element guide = doc.createElement("Guide");
-                guide.appendChild(doc.createTextNode(items.getGuide()));
-                item.appendChild(guide);
+                Element hours = doc.createElement("Hours");
+                hours.appendChild(doc.createTextNode(items.getHours()));
+                item.appendChild(hours);
 
                 Element date = doc.createElement("Date");
                 date.appendChild(doc.createTextNode(items.getDate()));
